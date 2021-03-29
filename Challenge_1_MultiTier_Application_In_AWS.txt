@@ -1,0 +1,19 @@
+1. Create a VPC with CIDR block
+2. Set Up Internet Gateway and Attach the VPC to this. This will allow the communication between the instance within VPC and Internet
+3. Create Subnet, Public and Private. Assign CIDR to the same. This will help us group our resources within VPC for high availability.
+4. Create Route Table, Public and Private. Helps in defining the rules that enable data movement.
+5. Attach Public and Private Route table to Public and Private Subnet respectively.
+6. Create Nat Gateway. This enables the instales in Private subnet to Access internet
+7. Configure the Route Table to edit the Route. For Public Route Table, edit teh Route and set target as Internet Gateway. For Private Route table, edit the Route and set the targe as the Nat Gateway created in step 6.
+8. Now, we need to create load balancer. There will be 2 load balancer, 1 that serves traffic from internet and other for internal traffic. For External Load balancer, select Scheme as "Internet Facing". For internal load balancer, set Scheme as "Internal" . We need to use Application Load balancer.
+9. Attach Private Subnet to Internal Load Balancer and Public Subnet to External Load Balancer. 
+10. Create Auto Scaling Group for front end tier, Select the required/preferred instance AMI.
+11. Configure the required details needed for teh application to start.
+12. Configure Security Groups for Ports that application will run on.
+13. Assign VPC, Subnet and Load Balancer to the Auto Scalling group
+14. Set up the Policy to for auto scaling.. Like add 2 Instance when CPU utilization is greater than 75% and remove 1 instance when Utilization is less.
+15, Repeat step 10-14 for back end tier and assign Subnet and Load Balancer accoridingly.
+
+
+
+
