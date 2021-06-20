@@ -1,3 +1,5 @@
+Creating MultiTier Application using AWS Web Console:
+======================================================
 1. Create a VPC with CIDR block
 2. Set Up Internet Gateway and Attach the VPC to this. This will allow the communication between the instance within VPC and Internet
 3. Create Subnet, Public and Private. Assign CIDR to the same. This will help us group our resources within VPC for high availability.
